@@ -16,6 +16,8 @@ else{
     span.innerHTML="\u00d7"
     li.appendChild(span);
 }
+inputBox.value= "";
+saveData();
 
 }
 
@@ -27,3 +29,14 @@ else{
                 e.target.parentElement.remove();
             }
  },false);
+
+
+function saveData(){
+    localStorage.setItem("data" , listContainer.innerHTML);
+}
+
+function showTask(){
+    listContainer.innerHTML = localStorage.getItem("data");
+}
+
+showTask();
